@@ -1,0 +1,33 @@
+</!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>pyscript demo</title>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    </head>
+    <body>
+<h1 id='heading'> </h1>              
+<form onsubmit="return false"> <!-- to not reload the page -->
+    <div>
+        value1 <input id= inp1 name= inp1 id="new-task-content" class="border flex-1 mr-3 border-gray-300 p-2 rounded" type="text">
+        value2 <input id=inp2 name=inp2 id="new-task-content1" class="border flex-1 mr-3 border-gray-300 p-2 rounded" type="text">
+        <input pys-onClick="add_task" type="submit" id="btn-form" value="submit">
+</div>
+</form>
+  <p>Output:</p>
+    <p id = 'output'></p>
+                <py-script>   
+print("Hello world from pyscript")
+def add_task(*args, **kwargs):
+   print("inside func shows in console log")
+   result_place = Element('output')
+   result_place.write(f"{Element('inp1').value} is a good human from {Element('inp2').value}")
+ 
+   
+heading_var=Element('heading')
+heading_var.write('pyscript html forms')   
+                </py-script>
+    </body>
+</html>
